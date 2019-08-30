@@ -227,7 +227,7 @@ Dropdown.prototype.render = function render (view) {
 };
 
 Dropdown.prototype.expand = function expand (dom, items) {
-  var menuDOM = crel("div", {class: prefix + "-dropdown-menu " + (this.options.class || "")}, items);
+  var menuDOM = crel("div", {class: prefix + "-dropdown-menu " + (this.options.class || "")}, [crel("div", {class: prefix + "-dropdown-menu-head"})].concat(items));
 
   var done = false;
   function close() {
